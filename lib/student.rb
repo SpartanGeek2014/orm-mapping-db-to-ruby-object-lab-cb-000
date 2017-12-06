@@ -16,12 +16,12 @@ class Student
       sql = <<-SQL
         SELECT *
         FROM students
-        SQL
+      SQL
 
-        DB[:conn].execute(sql).map do |row|
-          self.new_from_db(row)
-        end
+      DB[:conn].execute(sql).map do |row|
+        self.new_from_db(row)
       end
+    end
 
     def self.find_by_name(name)
       # find the student in the database given a name
@@ -36,7 +36,6 @@ class Student
         DB[:conn].execute(sql, name).map do |row|
           self.new_from_db(row)
         end.first
-      end
     end
 
     def save
@@ -64,4 +63,3 @@ class Student
       sql = "DROP TABLE IF EXISTS students"
       DB[:conn].execute(sql)
     end
-end
