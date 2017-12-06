@@ -10,7 +10,7 @@ class Student
       student.grade = row[2]
       student  # return the newly created instance
     end
-  
+
     def self.all
       # retrieve all the rows from the "Students" database
       # remember each row should be a new instance of the Student class
@@ -39,7 +39,7 @@ class Student
         end.first
       end
     end
-   
+
     def save
       sql = <<-SQL
         INSERT INTO students (name, grade)
