@@ -3,7 +3,6 @@ class Student
 
   def self.new_from_db(row)
     # create a new Student object given a row from the database
-    def self.new_from_db(row)
       student = self.new  # self.new is the same as running Song.new
       student.id = row[0]
       student.name =  row[1]
